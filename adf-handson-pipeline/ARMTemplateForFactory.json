@@ -1,0 +1,530 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-handson-pipeline"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dnacoglandingstrghandson.dfs.core.windows.net"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/inbound_import')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Place the text file from local system to inbound folder in ADL",
+				"activities": [
+					{
+						"name": "Copy to ADL",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "inbound/IN/colon cancer"
+							},
+							{
+								"name": "Destination",
+								"value": "dbo.Colon Cancer"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink"
+							},
+							"enableStaging": false,
+							"enableSkipIncompatibleRow": false,
+							"validateDataConsistency": true,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "id",
+											"type": "String"
+										},
+										"sink": {
+											"name": "id",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "study",
+											"type": "String"
+										},
+										"sink": {
+											"name": "study",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "rx",
+											"type": "String"
+										},
+										"sink": {
+											"name": "rx",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "sex",
+											"type": "String"
+										},
+										"sink": {
+											"name": "sex",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "age",
+											"type": "String"
+										},
+										"sink": {
+											"name": "age",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "obstruct",
+											"type": "String"
+										},
+										"sink": {
+											"name": "obstruct",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "perfor",
+											"type": "String"
+										},
+										"sink": {
+											"name": "perfor",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "adhere",
+											"type": "String"
+										},
+										"sink": {
+											"name": "adhere",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "nodes",
+											"type": "String"
+										},
+										"sink": {
+											"name": "nodes",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "status",
+											"type": "String"
+										},
+										"sink": {
+											"name": "status",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "differ",
+											"type": "String"
+										},
+										"sink": {
+											"name": "differ",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "extent",
+											"type": "String"
+										},
+										"sink": {
+											"name": "extent",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "surg",
+											"type": "String"
+										},
+										"sink": {
+											"name": "surge",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "node4",
+											"type": "String"
+										},
+										"sink": {
+											"name": "node4",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "time",
+											"type": "String"
+										},
+										"sink": {
+											"name": "time",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "etype\r",
+											"type": "String"
+										},
+										"sink": {
+											"name": "etype",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "colon_cancer",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/colon_cancer')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "id",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "study",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "rx",
+						"type": "varchar"
+					},
+					{
+						"name": "sex",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "age",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "obstruct",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "perfor",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "adhere",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "nodes",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "differ",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "extent",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "surg",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "node4",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "time",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "etype",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Colon Cancer"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/colon_cancer')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "colon cancer",
+						"folderPath": "IN",
+						"container": "inbound"
+					},
+					"columnDelimiter": "|",
+					"rowDelimiter": "\n",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "id study rx sex age obstruct perfor adhere nodes status differ extent surg node4 time etype",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 0
+						}
+					}
+				},
+				"managedVirtualNetwork": {
+					"type": "ManagedVirtualNetworkReference",
+					"referenceName": "default"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"preventDataExfiltration": false
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EOD')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "run pipelines at office hours EOD",
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "inbound_import",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2021-03-04T18:00:00Z",
+						"endTime": "2021-03-04T19:00:00Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/inbound_import')]"
+			]
+		}
+	]
+}
