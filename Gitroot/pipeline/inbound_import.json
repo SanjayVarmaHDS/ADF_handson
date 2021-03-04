@@ -36,7 +36,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "id study rx sex age obstruct perfor adhere nodes status differ extent surg node4 time etype",
+									"name": "id|study|rx|sex|age|obstruct|perfor|adhere|nodes|status|differ|extent|surg|node4|time|etype",
 									"type": "String"
 								},
 								"sink": {
