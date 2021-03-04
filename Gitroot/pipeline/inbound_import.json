@@ -36,7 +36,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "id|study|rx|sex|age|obstruct|perfor|adhere|nodes|status|differ|extent|surg|node4|time|etype\r",
+									"name": "id",
 									"type": "String"
 								},
 								"sink": {
@@ -45,90 +45,150 @@
 								}
 							},
 							{
+								"source": {
+									"name": "study",
+									"type": "String"
+								},
 								"sink": {
 									"name": "study",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "rx",
+									"type": "String"
+								},
 								"sink": {
 									"name": "rx",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "sex",
+									"type": "String"
+								},
 								"sink": {
 									"name": "sex",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "age",
+									"type": "String"
+								},
 								"sink": {
 									"name": "age",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "obstruct",
+									"type": "String"
+								},
 								"sink": {
 									"name": "obstruct",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "perfor",
+									"type": "String"
+								},
 								"sink": {
 									"name": "perfor",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "adhere",
+									"type": "String"
+								},
 								"sink": {
 									"name": "adhere",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "nodes",
+									"type": "String"
+								},
 								"sink": {
 									"name": "nodes",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "status",
+									"type": "String"
+								},
 								"sink": {
 									"name": "status",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "differ",
+									"type": "String"
+								},
 								"sink": {
 									"name": "differ",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "extent",
+									"type": "String"
+								},
 								"sink": {
 									"name": "extent",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "surg",
+									"type": "String"
+								},
 								"sink": {
 									"name": "surg",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "node4",
+									"type": "String"
+								},
 								"sink": {
 									"name": "node4",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "time",
+									"type": "String"
+								},
 								"sink": {
 									"name": "time",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "etype\r",
+									"type": "String"
+								},
 								"sink": {
 									"name": "etype",
 									"type": "Int32"
