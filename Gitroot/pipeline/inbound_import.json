@@ -46,7 +46,7 @@
 							{
 								"source": {
 									"name": "id",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "id",
@@ -56,7 +56,7 @@
 							{
 								"source": {
 									"name": "study",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "study",
@@ -76,7 +76,7 @@
 							{
 								"source": {
 									"name": "sex",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "sex",
@@ -86,7 +86,7 @@
 							{
 								"source": {
 									"name": "age",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "age",
@@ -96,7 +96,7 @@
 							{
 								"source": {
 									"name": "obstruct",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "obstruct",
@@ -106,7 +106,7 @@
 							{
 								"source": {
 									"name": "perfor",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "perfor",
@@ -116,7 +116,7 @@
 							{
 								"source": {
 									"name": "adhere",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "adhere",
@@ -126,7 +126,7 @@
 							{
 								"source": {
 									"name": "nodes",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "nodes",
@@ -136,7 +136,7 @@
 							{
 								"source": {
 									"name": "status",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "status",
@@ -146,7 +146,7 @@
 							{
 								"source": {
 									"name": "differ",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "differ",
@@ -156,7 +156,7 @@
 							{
 								"source": {
 									"name": "extent",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "extent",
@@ -166,7 +166,7 @@
 							{
 								"source": {
 									"name": "surg",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "surg",
@@ -176,7 +176,7 @@
 							{
 								"source": {
 									"name": "node4",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "node4",
@@ -186,7 +186,7 @@
 							{
 								"source": {
 									"name": "time",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "time",
@@ -196,7 +196,7 @@
 							{
 								"source": {
 									"name": "etype\r",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "etype",
