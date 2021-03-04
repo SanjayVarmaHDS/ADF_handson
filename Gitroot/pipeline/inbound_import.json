@@ -40,7 +40,7 @@
 						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
-					"enableSkipIncompatibleRow": true,
+					"enableSkipIncompatibleRow": false,
 					"validateDataConsistency": true,
 					"translator": {
 						"type": "TabularTranslator",
