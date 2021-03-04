@@ -1,0 +1,19 @@
+{
+	"name": "EOD",
+	"properties": {
+		"description": "run pipelines at office hours EOD",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2021-03-04T18:00:00Z",
+				"endTime": "2021-03-04T19:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
