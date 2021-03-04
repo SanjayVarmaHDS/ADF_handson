@@ -1,0 +1,7 @@
+{
+	"name": "inbound_import",
+	"properties": {
+		"description": "Place the text file from local system to inbound folder in ADL",
+		"annotations": []
+	}
+}
