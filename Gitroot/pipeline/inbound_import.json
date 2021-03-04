@@ -27,11 +27,125 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id study rx sex age obstruct perfor adhere nodes status differ extent surg node4 time etype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "study",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "rx",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "sex",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "age",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "obstruct",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "perfor",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "adhere",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "nodes",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "status",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "differ",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "extent",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "surg",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "node4",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "time",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "etype",
+									"type": "Int32"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "colon_cancer",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				]
