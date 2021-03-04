@@ -48,21 +48,21 @@
 							{
 								"source": {
 									"name": "id",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "id",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "study",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "study",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
@@ -78,131 +78,131 @@
 							{
 								"source": {
 									"name": "sex",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "sex",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "age",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "age",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "obstruct",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "obstruct",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "perfor",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "perfor",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "adhere",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "adhere",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "nodes",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "nodes",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "status",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "status",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "differ",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "differ",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "extent",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "extent",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "surg",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
-									"name": "surg",
-									"type": "Int32"
+									"name": "surge",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "node4",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "node4",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "time",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "time",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "etype\r",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "etype",
-									"type": "Int32"
+									"type": "String"
 								}
 							}
 						]
