@@ -1,0 +1,30 @@
+{
+	"name": "colon_cancer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "colon cancer",
+				"folderPath": "IN",
+				"container": "inbound"
+			},
+			"columnDelimiter": "|",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id study rx sex age obstruct perfor adhere nodes status differ extent surg node4 time etype",
+				"type": "String"
+			}
+		]
+	}
+}

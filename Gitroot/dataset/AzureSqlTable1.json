@@ -1,0 +1,96 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "study",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "rx",
+				"type": "varchar"
+			},
+			{
+				"name": "sex",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "age",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "obstruct",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "perfor",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "adhere",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "nodes",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "differ",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "extent",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "surg",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "node4",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "time",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "etype",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Colon Cancer"
+		}
+	}
+}
